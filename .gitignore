@@ -1,0 +1,20 @@
+# Terraform files
+.terraform/
+
+# Local .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files that are meant to be kept private
+*.auto.tfvars
+*.auto.tfvars.json
+*.tfvars
+
+# Crash log files
+crash.log
+
+# Ignore .terraformrc as it often contains sensitive information
+.terraformrc
+
+# .tfplan files are artifacts of the plan command
+*.tfplan
