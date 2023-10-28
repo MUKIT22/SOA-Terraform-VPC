@@ -93,7 +93,7 @@ module "vpc" {
       "rule_number" : 100
     },
     {
-      "cidr_block" :  "10.15.10.0/26", # Placeholder block of the VPN VPC
+      "cidr_block" : "10.15.10.0/26", # Placeholder block of the VPN VPC
       "from_port" : 22,
       "to_port" : 22,
       "protocol" : "tcp",
@@ -119,7 +119,7 @@ module "vpc" {
       "rule_number" : 100
     },
     {
-      "cidr_block" :  "10.15.10.0/26", # Placeholder block of the VPN VPC
+      "cidr_block" : "10.15.10.0/26", # Placeholder block of the VPN VPC
       "from_port" : 22,
       "to_port" : 22,
       "protocol" : "tcp",
@@ -127,7 +127,7 @@ module "vpc" {
       "rule_number" : 200
     },
     {
-      "cidr_block" :  "10.15.10.0/26", # Placeholder block of the VPN VPC
+      "cidr_block" : "10.15.10.0/26", # Placeholder block of the VPN VPC
       "from_port" : 3389,
       "to_port" : 3389,
       "protocol" : "tcp",
@@ -147,7 +147,7 @@ module "vpc" {
       "rule_number" : 100
     },
     {
-      "cidr_block" :  "10.15.10.0/26", # Placeholder block of the VPN VPC
+      "cidr_block" : "10.15.10.0/26", # Placeholder block of the VPN VPC
       "from_port" : 22,
       "to_port" : 22,
       "protocol" : "tcp",
@@ -164,6 +164,7 @@ module "vpc" {
     }
   ]
 
+  database_dedicated_network_acl = true
 
   database_outbound_acl_rules = [
     {
