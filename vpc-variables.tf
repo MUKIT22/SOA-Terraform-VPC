@@ -3,8 +3,8 @@
 # AWS Region
 variable "aws_region" {
   description = "Region in which AWS Resources to be created"
-  type = string
-  default = "us-west-2"  
+  type        = string
+  default     = "us-west-2"
 }
 
 # VPC Name
@@ -14,13 +14,13 @@ variable "vpc_name" {
   default     = "myvpc"
 }
 
-variable "vpc_tags" {
+# variable "vpc_tags" {
 
-  description = "VPC Tag"
-  type        = string
-  default     = "SOA"
-  
-}
+#   description = "VPC Tag"
+#   type        = string
+#   default     = "SOA"
+
+# }
 
 # VPC CIDR Block
 variable "vpc_cidr_block" {
@@ -52,40 +52,35 @@ variable "vpc_private_subnets" {
 # VPC Database Subnets
 variable "vpc_database_subnets" {
   description = "VPC Private Database Subnets"
-  type = list(string)
-}
-
-variable "vpn_vpc_cidr" {
-  description = "VPN VPC CIDR Block"
-  type = string
+  type        = list(string)
 }
 
 # VPC Create Database Subnet Group (True / False)
 variable "vpc_create_database_subnet_group" {
   description = "VPC Create Database Subnet Group"
-  type = bool
-  default = true 
+  type        = bool
+  default     = true
 }
 
 # VPC Create Database Subnet Route Table (True or False)
 variable "vpc_create_database_subnet_route_table" {
   description = "VPC Create Database Subnet Route Table"
-  type = bool
-  default = true   
+  type        = bool
+  default     = true
 }
 
 
 # VPC Enable NAT Gateway (True or False) 
 variable "vpc_enable_nat_gateway" {
   description = "Enable NAT Gateways for Private Subnets Outbound Communication"
-  type = bool
-  default = true  
+  type        = bool
+  default     = true
 }
 
 # VPC Single NAT Gateway (True or False)
 variable "vpc_single_nat_gateway" {
   description = "Enable only single NAT Gateway in one Availability Zone to save costs during our demos"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
