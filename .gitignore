@@ -6,9 +6,7 @@
 *.tfstate.*
 
 # .tfvars files that are meant to be kept private
-*.auto.tfvars
-*.auto.tfvars.json
-*.tfvars
+
 
 # Crash log files
 crash.log
