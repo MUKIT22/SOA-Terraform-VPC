@@ -1,24 +1,24 @@
 # Create VPC Terraform Module
-module "vpc" {
+module "vpc_prod" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.1.2"
 
   # VPC Basic Details
-  name            = var.vpc_name
-  cidr            = var.vpc_cidr_block
-  azs             = var.vpc_availability_zones
-  public_subnets  = var.vpc_public_subnets
-  private_subnets = var.vpc_private_subnets
+  name            = var.vpc_name_prod
+  cidr            = var.vpc_cidr_block_prod
+  azs             = var.vpc_availability_zones_prod
+  public_subnets  = var.vpc_public_subnets_prod
+  private_subnets = var.vpc_private_subnets_prod
 
 
   # Database Subnets
-  database_subnets                   = var.vpc_database_subnets
-  create_database_subnet_group       = var.vpc_create_database_subnet_group
-  create_database_subnet_route_table = var.vpc_create_database_subnet_route_table
+  database_subnets                   = var.vpc_database_subnets_prod
+  create_database_subnet_group       = var.vpc_create_database_subnet_group_prod
+  create_database_subnet_route_table = var.vpc_create_database_subnet_route_table_prod
 
   # NAT Gateways - Outbound Communication
-   enable_nat_gateway = var.vpc_enable_nat_gateway 
-   single_nat_gateway = var.vpc_single_nat_gateway
+   enable_nat_gateway = var.vpc_enable_nat_gateway_prod 
+   single_nat_gateway = var.vpc_single_nat_gateway_prod
    
 
   # VPC DNS Parameters
@@ -87,7 +87,7 @@ module "vpc" {
 
   private_inbound_acl_rules = [
     {
-      "cidr_block" : "10.15.0.0/25",
+      "cidr_block" : "10.16.0.0/25", #CIDR block that cover all public subnets
       "from_port" : 0,
       "protocol" : "-1",
       "rule_action" : "allow",
@@ -113,7 +113,7 @@ module "vpc" {
 
   private_outbound_acl_rules = [
     {
-      "cidr_block" : "10.15.0.0/25",
+      "cidr_block" : "10.16.0.0/25", #CIDR block that cover all public subnets
       "from_port" : 0,
       "protocol" : "-1",
       "rule_action" : "allow",
@@ -141,7 +141,7 @@ module "vpc" {
 
   database_inbound_acl_rules = [
     {
-      "cidr_block" : "10.15.0.0/25",
+      "cidr_block" : "10.16.0.0/25", #CIDR block that cover all public subnets
       "from_port" : 0,
       "protocol" : "-1",
       "rule_action" : "allow",
@@ -169,7 +169,7 @@ module "vpc" {
 
   database_outbound_acl_rules = [
     {
-      "cidr_block" : "10.15.0.0/25",
+      "cidr_block" : "10.16.0.0/25", #CIDR block that cover all public subnets
       "from_port" : 0,
       "protocol" : "-1",
       "rule_action" : "allow",
@@ -196,13 +196,16 @@ module "vpc" {
 
   # Additional Tags to Subnets
   public_subnet_tags = {
-    Type = "Public Subnets"
+    Name = "Public Subnet"
+    Environment = "Production"
   }
   private_subnet_tags = {
-    Type = "Private Subnets"
+    Name = "Private Subnet"
+    Environment = "Production"
   }
   database_subnet_tags = {
-    Type = "Private Database Subnets"
+    Name = "DB Private Subnet"
+    Environment = "Production"
   }
 }
 

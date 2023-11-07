@@ -16,6 +16,11 @@ terraform {
 
 # Provider Block
 provider "aws" {
-  region  = var.aws_region
+  region  = var.aws_region_stage
   profile = "default"
+}
+
+provider "aws" {
+  alias  = "us-east"
+  region = "us-east-1"
 }
