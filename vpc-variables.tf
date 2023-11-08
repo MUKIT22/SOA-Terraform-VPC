@@ -201,7 +201,6 @@ variable "vpc_name_vpn" {
 variable "vpc_cidr_block_vpn" {
   description = "VPC CIDR Block"
   type        = string
-  default     = "10.15.0.0/23"
 }
 
 # VPC Availability Zones

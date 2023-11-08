@@ -99,7 +99,7 @@ module "vpc_stage" {
       "rule_number" : 100
     },
     {
-      "cidr_block" : module.vpc_vpn.vpc_cidr_block_stage_vpn, # Placeholder block of the VPN VPC
+      "cidr_block" : var.vpc_cidr_block_vpn, # Placeholder block of the VPN VPC
       "from_port" : 22,
       "to_port" : 22,
       "protocol" : "tcp",
@@ -107,7 +107,7 @@ module "vpc_stage" {
       "rule_number" : 200
     },
     {
-      "cidr_block" : module.vpc_vpn.vpc_cidr_block_stage_vpn, # Placeholder block of the VPN VPC
+      "cidr_block" : var.vpc_cidr_block_vpn, # Placeholder block of the VPN VPC
       "from_port" : 3389,
       "to_port" : 3389,
       "protocol" : "tcp",
@@ -125,7 +125,7 @@ module "vpc_stage" {
       "rule_number" : 100
     },
     {
-      "cidr_block" : module.vpc_vpn.vpc_cidr_block_stage_vpn, # Placeholder block of the VPN VPC
+      "cidr_block" : var.vpc_cidr_block_vpn, # Placeholder block of the VPN VPC
       "from_port" : 22,
       "to_port" : 22,
       "protocol" : "tcp",
@@ -133,7 +133,7 @@ module "vpc_stage" {
       "rule_number" : 200
     },
     {
-      "cidr_block" : module.vpc_vpn.vpc_cidr_block_stage_vpn, # Placeholder block of the VPN VPC
+      "cidr_block" : var.vpc_cidr_block_vpn, # Placeholder block of the VPN VPC
       "from_port" : 3389,
       "to_port" : 3389,
       "protocol" : "tcp",
@@ -153,7 +153,7 @@ module "vpc_stage" {
       "rule_number" : 100
     },
     {
-      "cidr_block" : module.vpc_vpn.vpc_cidr_block_stage_vpn, # Placeholder block of the VPN VPC
+      "cidr_block" : var.vpc_cidr_block_vpn, # Placeholder block of the VPN VPC
       "from_port" : 22,
       "to_port" : 22,
       "protocol" : "tcp",
@@ -161,7 +161,7 @@ module "vpc_stage" {
       "rule_number" : 200
     },
     {
-      "cidr_block" : module.vpc_vpn.vpc_cidr_block_stage_vpn, # Placeholder block of the VPN VPC
+      "cidr_block" : var.vpc_cidr_block_vpn, # Placeholder block of the VPN VPC
       "from_port" : 3389,
       "to_port" : 3389,
       "protocol" : "tcp",
@@ -181,7 +181,7 @@ module "vpc_stage" {
       "rule_number" : 100
     },
     {
-      "cidr_block" : module.vpc_vpn.vpc_cidr_block_stage_vpn, # Placeholder CIDR block of the VPN VPC
+      "cidr_block" : var.vpc_cidr_block_vpn, # Placeholder CIDR block of the VPN VPC
       "from_port" : 22,
       "to_port" : 22,
       "protocol" : "tcp",
@@ -189,7 +189,7 @@ module "vpc_stage" {
       "rule_number" : 200
     },
     {
-      "cidr_block" : module.vpc_vpn.vpc_cidr_block_stage_vpn, # Placeholder CIDR block of the VPN VPC
+      "cidr_block" : var.vpc_cidr_block_vpn, # Placeholder CIDR block of the VPN VPC
       "from_port" : 3389,
       "to_port" : 3389,
       "protocol" : "tcp",

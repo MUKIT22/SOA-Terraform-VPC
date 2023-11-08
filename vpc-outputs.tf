@@ -25,7 +25,7 @@ output "vpc_cidr_block_prod" {
   description = "The CIDR block of the VPC"
   value       = module.vpc_prod.vpc_cidr_block
 }
-output "vpc_cidr_block_stage_vpn" {
+output "vpc_cidr_block_vpn" {
   description = "The CIDR block of the VPC"
   value       = module.vpc_vpn.vpc_cidr_block
 }
